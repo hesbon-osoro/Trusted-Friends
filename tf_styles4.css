@@ -1,0 +1,133 @@
+@charset "utf-8";
+/*
+   New Perspectives on HTML5 and CSS3, 7th Edition
+   Tutorial 5
+   Review Assignment
+   
+   Author: Hesbon Osoro
+   Date: 12/9/22     
+      
+   Filename: tf_styles4.css
+
+   This file contains the screen styles used with the Trusted
+   Friends blog tips
+
+*/
+
+/* Import Basic Design Styles Used on All Screens */
+
+@import url("tf_designs.css");
+
+/* General Flex Styles */
+body {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+section#left {
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 8;
+  flex-shrink: 8;
+  -webkit-flex-basis: 130px;
+  flex-basis: 130px;
+}
+
+section#right {
+  -webkit-flex-grow: 8;
+  flex-grow: 8;
+  -webkit-flex-shrink: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: 351px;
+  flex-basis: 351px;
+}
+
+section.tips {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+article {
+  -webkit-flex-grow: 2;
+  flex-grow: 2;
+  -webkit-flex-shrink: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: 351px;
+  flex-basis: 351px;
+}
+
+aside {
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 2;
+  flex-shrink: 2;
+  -webkit-flex-basis: 250px;
+  flex-basis: 250px;
+}
+
+ul {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+/* ===============================
+	Mobile Devices: 0 to 480px 
+   ===============================
+*/
+
+@media screen and (max-width: 480px) {
+  .vertical > ul {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    height: 240px;
+  }
+
+  section#left {
+    -webkit-order: 99;
+    order: 99;
+  }
+  footer {
+    -webkit-order: 100;
+    order: 100;
+  }
+
+  a#navicon {
+    display: block;
+  }
+
+  nav.horizontal ul {
+    display: none;
+  }
+
+  a#navicon:hover + ul,
+  nav.horizontal ul:hover {
+    display: block;
+  }
+}
+
+/* ============================================
+	Tablet and Desktop Devices: 481px or more 
+   ============================================
+*/
+
+@media screen and (min-width: 481px) {
+  .horizontal > ul {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    height: 160px;
+  }
+}
